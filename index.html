@@ -1,62 +1,289 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
+	<title> My Order form </title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+	<style>
+		body {
+			background-color: #FFFF00;
+			background-image: url("images/cardboardbox.png");
+		}
+		hr {
+			clear: both;
+			visibility: hidden;
+		}
+		h1 {
+			text-align: center;
+			font-family: 'Audiowide', cursive;
+		}
+		h2 {
+			text-align: center;
+			font-family: 'Kaushan Script', cursive;
+		}
+		td {
+			font-family: 'Space Mono', monospace;
+		}
+	</style>
 
-		<meta charset="UTF-8">
-		<title>Full Stack</title>
-		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-		<link rel="stylesheet" href="css/fullstack.css">
+	<script src="js/accounting.js"></script>
+	<script src="js/orderprocessing.js"></script>
+
+	<head>
+		<script>
+			function w3_open() {
+				document.getElementById("main").style.marginLeft = "25%";
+				document.getElementById("mySidebar").style.width = "25%";
+				document.getElementById("mySidebar").style.display = "block";
+				document.getElementById("openNav").style.display = 'none';
+			}
+
+			function w3_close() {
+				document.getElementById("main").style.marginLeft = "0%";
+				document.getElementById("mySidebar").style.display = "none";
+				document.getElementById("openNav").style.display = "inline-block";
+			}
+		</script>
 	</head>
 	<body>
-
-		<h1 id="fonted">Full Stack! Created by Andrew</h1>
-		<h2>I want to be a "Full Stack" web developer - what does that mean?</h2>
-		<h3>... well let me show you</h3>
-		<a href="images/flowRoot10198.png"> <h3>(Click here for a visual overview)</a></h3>
+		<div zclass="w3-main" id="main">
+			<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
+				<button class="w3-bar-item w3-button w3-large"
+				onclick="w3_close()">
+					Close &times;
+				</button>
+				<a href="#" class="w3-bar-item w3-button">Link 1</a>
+				<a href="#" class="w3-bar-item w3-button">Link 2</a>
+				<a href="#" class="w3-bar-item w3-button">Link 3</a>
+			</div>
+			<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">
+				&#9776;
+			</button>
+		</div>
+		<h1>My Order Form!</h1>
+		<h2>Created by AndrewW</h2>
 		<br>
 
-		<hr>
-		<h4>What does "Full Stack" mean?</h4>
-		<pre>
-		Full means that you develop both the front and back end.
-		The front end is what the user sees on what is called the client computer.
-		The back end is what is on the server cimouter that deilvers content to the front end.
-	</pre>
-		<br>
-		<h4> What does "Stack" in Full Stack mean?</h4>
-		<pre>
-		Stack means that several programs, a "stack" of programs is used
-	</pre>
-		
+<ul>
+	<li>
+		Shipping -- debugging check point grade (all code is given)</li>
+		<li>Size (Radio Button) -- debugging check point grade (all code is given)</li>
+		<li>Total cost -- all code is given</li>
+		<li>Verify order -- given partial code, add code to complete</li>
+		<li> Add description pages</li>
+		<li>Place on local server</li>
+		<li>Place on central server</li>
 	
+</ul>
 
-		<p>
-			1. Explain DB. Oragnized way to save adata on a server. LIFEBLOOD ofall business, to track employees, customers, products, services, supplies...
-			<br>
-			2.
-			<br>
-			3. SQL(Structured Query Language) is a domain-specific language used in programming and designed for managing data held in a relational database management system
-			(RDBMS), or for stream processing in a relational data stream management system (RDSMS).
-			<br>
-			4. PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is
-			especially suited for web development and can be embedded into HTML.
-			<br>
-			5.
-			<br>
-			6. MySQL from the CLI (Command Line Interface) -- NTS, structure when done
-			
-			...The suer interface for Dbs 
+		<div class="w3-bar w3-light-grey">
+			<a href="#" class="w3-bar-item w3-button">Home</a>
+			<a href="http://www.thecardboardbox.co.uk/" class="w3-bar-item w3-button">Cardboard box company</a>
+			<div class="w3-dropdown-hover">
+				<button class="w3-button">
+					Dropdown
+				</button>
+				<div class="w3-dropdown-content w3-bar-block w3-card-4">
+					<a href="#" class="w3-bar-item w3-button">Link 1</a>
+					<a href="#" class="w3-bar-item w3-button">Link 2</a>
+					<a href="#" class="w3-bar-item w3-button">Link 3</a>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<br>
+		<p id ="showShipper">
+
 		</p>
-		
-		
-		
-		
-		<li>
-			$ mysql -u root -p
-			Enter Password:
-			
-		</li>
+		<p id="showSize">
 
+		</p>
+		<div style="center">
+			<h1> The cardboard box emporium</h1>
+			<div align="center">
+
+				<form name="orderForm">
+					<table style="background-color:#cc6600" border="2" width="400" cellpadding="5" cellspacing="0" summary="">
+						<tbody>
+							<tr>
+								<td colspan="4" align="center"><b>Order Form</b></td>
+
+							</tr>
+							<tr style="background-color:#cc9900">
+								<td>Item</td>
+								<td>Qty</td>
+								<td>Each</td>
+								<td align="right">Total</td>
+							</tr>
+
+							<tr>
+								<td>CardBoard box</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,0,5.95)">
+								</td>
+								<td>$ 5.95</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<tr>
+								<td>Ultra CardBoard box</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,1,10.95)">
+								</td>
+								<td>$ 10.95</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<tr>
+								<td>Epic CardBoard box</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,2,20.95)">
+								</td>
+								<td>$ 20.95</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<tr>
+								<td>Reinforced CardBoard box</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,3,30.95)">
+								</td>
+								<td>$ 30.95</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<tr>
+								<td><a href="descriptions/description1.html">Limited time <span style="color:red">FESTIVE</span> Cardboard box</a></td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,4,50.95)">
+								</td>
+								<td>$ 50.95</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<td colspan="3" bgcolor="#FF0000"> Options Total <td align="right">
+							<input name="grand_total" type="text" size="10" readonly>
+							</td>
+							<tr>
+								<td>Box size</td>
+								
+								<td>
+								<input type="radio" name="size" onclick="setSize(this.value)" value="Small" >
+								Small
+								<br>
+								<input type="radio" name="size" onclick="setSize(this.value)" value="Medium">
+								Medium
+								<br>
+								<input type="radio" name="size" onclick="setSize(this.value)" value="Large">
+								Large 
+								<br>
+								<br>
+								Your size is:
+								
+								<input name="mySize" type="text"></td>
+								<td> Small
+								<br>
+								$20.95
+								<br>
+								Medium 
+								<br>
+								$35.95
+								<br>
+								Large 
+								<br>$50.95 </td>
+								
+								<td align="right">
+								<input name="lineSize" type="text" size="10" readonly>
+								</td>
+							</tr>
+								
+							<tr>
+								<td>Shipping Company</td>
+								<td>
+								<select id="selectShipper">
+									<option value="usps">USPS</option>
+									<option value="ups">UPS</option>
+									<option value="fedex">FedEx</option>
+									<option value="pickup">Pick Up</option>
+								</select>
+								<br>
+								Shipped By:
+								<input type="text" id='previewShipper'>
+								<input type="button" onclick="setShipper()" value="Submit">
+								</td>
+								<td>USPS    $20.95
+								<br>
+								UPS
+								<br>
+								$24.95
+								<br>
+								FedEx   $29.95
+								<br>
+								Pick Up $0.00 </td>
+								<td align="right">
+								<input name="finalShip" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<tr>
+								<td colspan="3" bgcolor="#FF0000"> Sales Tax <td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+							</tr>
+							</td>
+
+							<td colspan="2" bgcolor="#FF0000"> Calcaulate the total cost of this order </td>
+							<td bgcolor="#FF0000">
+							<input type="button" onclick="calculateTotal()" value="Calculate">
+							</td>
+							<td align="right">
+							<input name="line_sum" type="text" size="10" readonly>
+							</td>
+							<tr style="background-color:e6e6fa">
+								<td>
+								<input type="button" value="Reset" onclick="init()">
+								</td>
+								<td colspan="2" align="right">Grand Total :</td>
+								<td align="right">
+								<input name="finalTotal" type="text" size="10" readonly>
+								</td>
+
+							</tr>
+							<tr>
+								<td colspan="4" align="center">
+								<input type="button" value="Press to verify order" onclick="get_data(orderForm)">
+								</td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+				</form>
+				<form name="confirmationForm">
+					<table style="background-color:#FFFF00" border="4" width="400" cellpadding="5" cellspacing="0" summary="">
+						<tbody>
+
+							<tr>
+								<td align="center">								<textarea name="order" rows="10" cols="35">
+							</textarea></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
